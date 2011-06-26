@@ -1,0 +1,6 @@
+#!/usr/bin/osascript
+
+on run argv
+      set input to argv as string
+      say input & " minutes left"
+end run
