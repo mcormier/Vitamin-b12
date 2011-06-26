@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Move to the location of this shell script
+# So that calls to resource files are relative
+MYLOCATION=`dirname $0`
+cd $MYLOCATION
+
 # Default value
 MINUTES=25
 
