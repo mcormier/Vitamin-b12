@@ -1,67 +1,36 @@
 #!/usr/bin/bash
 
+MINUTES=25
+
+function evenLogic {
+  echo "$1 minutes left"
+  afplay clocktick.m4a &
+}
+
+function fiveLogic {
+  say.osascript $1 &
+}
+
 date
 
-sleep 60
-# 24 min
-afplay clocktick.m4a &
-sleep 120
-
-# 22 min
-afplay clocktick.m4a &
-sleep 120
-
-# 20 min
-afplay clocktick.m4a &
-osascript -e 'say "20 minutes left"' &
-sleep 120 
-
-# 18 min
-afplay clocktick.m4a &
-sleep 120 
-
-# 16 min
-afplay clocktick.m4a &
-sleep 60 
-
-# 15 min
-osascript -e 'say "15 minutes left"' &
+let MINUTES=MINUTES-1
 sleep 60
 
-# 14 min
-afplay clocktick.m4a &
-sleep 120 
+for (( minute=MINUTES ; minute > 0 ; minute--))
+do
+  let isEven=`expr $minute % 2`
+  if [ $isEven -eq 0 ] ; then
+    evenLogic $minute
+  fi
 
-# 12 min
-afplay clocktick.m4a &
-sleep 120 
+  let isDivFive=`expr $minute % 5`
+  if [ $isDivFive -eq 0 ] ; then
+    fiveLogic $minute
+  fi
 
-# 10 min
-afplay clocktick.m4a &
-osascript -e 'say "10 minutes left"' &
-sleep 120 
-
-# 8 min
-afplay clocktick.m4a &
-sleep 120 
-
-# 6 min
-afplay clocktick.m4a &
-sleep 60 
-
-# 5 min
-osascript -e 'say "5 minutes left"' &
-sleep 60
-
-# 4 min
-afplay clocktick.m4a &
-sleep 120 
-
-# 2 min
-afplay clocktick.m4a &
-sleep 120 
-
+  sleep 60
+done  
 
 afplay "done.aif" &
-
 date
+
