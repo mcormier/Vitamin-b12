@@ -1,6 +1,19 @@
 #!/usr/bin/bash
 
+# Default value
 MINUTES=25
+
+# arg given
+if [  ! -z "$1"   ] ; then
+  # arg is an integer
+  expr $1 + 1  &> /dev/null
+  if [ $? = 0 ] ; then
+    expr $1 - 1 &> /dev/null
+    MINUTES=$1
+  fi
+fi
+
+echo "Running for $MINUTES minutes"
 
 function evenLogic {
   echo "$1 minutes left"
