@@ -22,11 +22,11 @@ echo "Running for $MINUTES minutes"
 
 function evenLogic {
   echo "$1 minutes left"
-  afplay clocktick.m4a &
+  afplay ./resources/clocktick.m4a &
 }
 
 function fiveLogic {
-  say.osascript $1 &
+  ./resources/say.osascript $1 &
 }
 
 date
@@ -49,6 +49,6 @@ do
   sleep 60
 done  
 
-afplay "done.aif" &
+afplay "./resources/done.aif" &
 date
 
