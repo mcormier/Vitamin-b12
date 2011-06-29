@@ -26,7 +26,7 @@ function evenLogic {
 }
 
 function fiveLogic {
-  ./resources/say.osascript $1 &
+  ./resources/say.applescript $1 &
 }
 
 date
