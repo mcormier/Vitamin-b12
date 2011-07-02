@@ -15,7 +15,7 @@ function parseParam {
     # Script called by double clicking app
     # Get the minute length with an applescript
     getTimeLength
-    return
+    exit $?
   fi
 
   # Default setting
@@ -47,7 +47,7 @@ function getTimeLength {
   TIME_LENGTH=`${SCRIPTLOC}/../Resources/chooseTime.applescript`
   if [ $TIME_LENGTH = "false" ] ; then
     # The user hit the cancel button
-    exit
+    exit 1
   fi
 
   # Convert "25 minutes" --> "25" 
