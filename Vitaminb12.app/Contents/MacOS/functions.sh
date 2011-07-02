@@ -33,7 +33,14 @@ function parseParam {
 }
 
 
+function sendGrowlNotification {
+  if [ -f /usr/local/bin/growlnotify ] ; then
+    /usr/local/bin/growlnotify -m "$*" -t "Vitamin-B12"
+  fi
+}
+
 function evenLogic {
+  sendGrowlNotification "$1 minutes left"
   afplay ${SCRIPTLOC}/../Resources/clocktick.m4a &
 }
 

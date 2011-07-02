@@ -26,5 +26,12 @@ You can optionally specify the length of time to run in minutes from the command
 The default length is 25 minutes.
 
 
+**Extras**
 
+Install [Growl](http://growl.info/) and **growlnotify** if you want to see status notifications
+while Vitamin-B12 is running. 
+
+- Download the latest version of [Growl](http://growl.info/)
+- Install Growl.pkg
+- Install growlnotify.pkg located in the Extras directory
 
