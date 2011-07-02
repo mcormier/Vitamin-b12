@@ -52,7 +52,7 @@ function fiveLogic {
 function getTimeLength {
   # Display simple GUI with applescript
   TIME_LENGTH=`${SCRIPTLOC}/../Resources/chooseTime.applescript`
-  if [ $TIME_LENGTH = "false" ] ; then
+  if [ "$TIME_LENGTH" = "false" ] ; then
     # The user hit the cancel button
     exit 1
   fi
