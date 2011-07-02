@@ -20,11 +20,12 @@ over.
 You can either run **Vitamin-B12** as an app or from the command line. To run it from
 the command line simply execute run.sh that is embedded in the app directly.
 
-_i.e. Vitaminb12.app/Contents/MacOS/run.sh 40_
+  i.e._Vitaminb12.app/Contents/MacOS/run.sh 40_
 
 You can optionally specify the length of time to run in minutes from the command line.
 The default length is 25 minutes.
 
+* * *
 
 **Extras**
 
